@@ -71,4 +71,5 @@ ___
 | Activity | Time Spent | Total Time On Project |
 |---|---|---|
 | Planning and writing initial documentation | 15 mins | 0:15 |
-| Create Redux Components | 
+| Create Redux Components | | |
+ 
