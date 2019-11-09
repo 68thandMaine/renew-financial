@@ -1,9 +1,18 @@
-import { types } from '../components';
+import * as types from '../constants/ActionTypes';
+import constants from '../constants';
+const { inititalState } = constants;
 
-const loanApplicationReducer = ( state = {}, action ) => {
+const loanApplicationReducer = ( state = inititalState, action ) => {
   switch(action.type) {
     case types.UPLOAD_APPLICATION: {
-      return Object.assign({}, state, action.data);
+      return Object.assign({}, state, {
+        applications: [
+          ...state.applications,
+          
+            action.application
+          
+        ]
+      });
     }
     default:
       return state;
