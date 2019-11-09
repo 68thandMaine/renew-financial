@@ -1,5 +1,7 @@
 .App {
   text-align: center;
+  display: flex;
+  flex-flow: column nowrap;
 }
 
 .App-logo {
@@ -19,4 +21,14 @@
 
 .App-link {
   color: #09d3ac;
+}
+
+.resultsWrapper {
+  display: none;
+}
+.show {
+  display: block !important;
+}
+.hide { 
+  display: none !important;
 }

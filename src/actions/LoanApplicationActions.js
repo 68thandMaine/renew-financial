@@ -1,8 +1,9 @@
 import constants from '../constants';
 const { action } = constants;
 
-async function addLoanApplication(loanApplication) {
-
+export function addLoanApplication(app) {
+  return {
+    type: action.UPLOAD_APPLICATION,
+    application: app
+  };
 }
-
-export { addLoanApplication} ;

@@ -1,7 +1,6 @@
 import React from 'react';
 /* global google */
 
-import VerificationServices from '../../services/VerificationServices';
 
 class AutoCompleteInput extends React.Component {
 
@@ -15,7 +14,6 @@ class AutoCompleteInput extends React.Component {
   componentDidMount() {
     this.address = new google.maps.places.Autocomplete(this.autocompleteInput.current,
         {"types": ["address"]});
-
     this.address.addListener('place_changed', this.handlePlaceChanged);
   }
 
@@ -24,9 +22,10 @@ class AutoCompleteInput extends React.Component {
     this.props.handleSetAddressState(place.formatted_address) 
   }
 
+
   render() {
     return (
-        <input ref={this.autocompleteInput} defaultValue={this.props.value}  className='formInput' id="address" name='address' placeholder="Enter your address"
+        <input ref={this.autocompleteInput}  className='formInput' id="address" name='address' placeholder="Enter your address"
          type="text"></input>
     );
   }

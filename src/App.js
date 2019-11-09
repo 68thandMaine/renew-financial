@@ -1,26 +1,54 @@
 import React from 'react';
-import logo from './logo.svg';
+import { connect} from 'react-redux';
+import LoanForm from './components/form/LoanForm';
+import Results from './components/results/Results';
 import './App.css';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+class App extends React.Component{
+  constructor(props) {
+    super(props);
+    this.state= {
+      application: { }
+    };
+    this.handleSetApplication = this.handleSetApplication.bind(this);
+    this.handleReturnToApplication = this.handleReturnToApplication.bind(this);
+  }
+
+  handleSetApplication(newLoan) {
+    document.querySelector('.loanFormWrapper').classList.add('hide');
+    document.querySelector('.resultsWrapper').classList.add('show');
+    this.setState({
+      application: newLoan
+    });
+  }
+
+  handleReturnToApplication() {
+    console.log('hi')
+    document.querySelector('.loanFormWrapper').classList.remove('hide');
+    document.querySelector('.resultsWrapper').classList.remove('show');
+  }
+
+render() {
+      return (
+      <div className="App">
+        <div className='loanFormWrapper'>
+          <LoanForm 
+            currentApplication={this.handleSetApplication} />
+        </div>
+        <div className='resultsWrapper'>
+          <Results
+            returnToApplication={this.handleReturnToApplication}
+            application={this.state.application} 
+            loans={this.props.loans}/>
+        </div>
+      </div>
+  )}
 }
 
-export default App;
+const mapStateToProps = state => {
+  return {
+    loans: state.applications
+  }
+}
+
+export default connect(mapStateToProps)(App);

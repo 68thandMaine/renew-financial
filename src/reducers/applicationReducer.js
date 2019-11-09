@@ -8,9 +8,7 @@ const loanApplicationReducer = ( state = inititalState, action ) => {
       return Object.assign({}, state, {
         applications: [
           ...state.applications,
-          
             action.application
-          
         ]
       });
     }

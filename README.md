@@ -23,21 +23,23 @@ Steps:
 
 ### Decisioning
 
-- [] Loan cannot be less than $5000
-- [] Loan cannot be more than $50000.
-- [] Loan cannot exceed 30% of the annual income.
-- [] Loan can only be accepted if the applicant lives in CA, FL, or OR.
+- [X] Loan cannot be less than $5000
+- [X] Loan cannot be more than $50000.
+- [X] Loan cannot exceed 30% of the annual income.
+- [X] Loan can only be accepted if the applicant lives in CA, FL, or OR.
+
+See the [Tests file](#tests) for more information on Decisioning for the application.
 
 ### Google Maps Places Auto Complete
 
-- [] Should be separate component from the form.
-- [] Integrate type a head feature provided through google maps places API
-- [] Send response from type a head to form component.
+- [x] Should be separate component from the form.
+- [x] Integrate type a head feature provided through google maps places API
+- [x] Send response from type a head to form component.
 
 ### Persistance
 
 - [X] Integrate Redux for state management. I will not use a DB. Just Redux to hold local state information.
-- [] Create object with the following properties:
+- [X] Create object with the following properties:
   - Name
   - Address
   - Annual Income
@@ -48,7 +50,7 @@ Steps:
 
 ### Display Data
 
-- [] Create a component to hold loan application information held in Redux state.
+- [X] Create a component to hold loan application information held in Redux state.
 - [] Create functionality to toggle between approved and unapproved loans.
 
 ___
@@ -62,8 +64,11 @@ ___
 
 ## Tests
 
-I will write tests for the decisioning logic:
+The following two functions address the decisioning portion of the challenge:
 
+**`loanAcceptance ( annualIncome, loanAmount )`**
+
+This function returns an object detailing if the loan was accepted or if it was not. **A loan is only accepted if it is between $5,000 and $50,000**
 ___
 
 ## Time Table
@@ -72,8 +77,9 @@ ___
 |---|---|---|
 | Planning and writing initial documentation | 15 mins | 0:15 |
 | Create Redux Components | 35 mins | 0:45 |
-| Create Form Component | | |
- 
+| Create Form Component and Custom Validation | 1 hour | 1:45 |
+| Create Reux Store and Reducer to Add Loans | 1 hour | 2:45 |
+| Create a Component to Display Loan Status | 20 mins | 3:05 |
 __
 
 ## Issues

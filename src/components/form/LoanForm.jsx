@@ -3,6 +3,8 @@ import Button from '../button/Button';
 import AutoCompleteInput from '../input/AutoCompleteInput';
 import './LoanForm.css';
 import VerificationServices from '../../services/VerificationServices';
+import {connect} from 'react-redux';
+import { addLoanApplication } from '../../actions/LoanApplicationActions';
 /* global google */
 
 class LoanForm extends React.Component {
@@ -77,10 +79,18 @@ class LoanForm extends React.Component {
   }
 
   handleFormSubmission() {
-    console.log(this.state)
+    const { dispatch, currentApplication } = this.props;
     if(this.validateInputs()) {
-    const loanStatus = VerificationServices.loanAcceptance(this.state.annualIncome, this.state.loanAmount);
-    this.props.loanApplication(loanStatus);
+    const loanStatus = VerificationServices.loanAcceptance(this.state.annualIncome, this.state.loanAmount, this.state.address);
+    const application = Object.assign({}, {
+      name: this.state.name,
+      address: this.state.address,
+      loanAmount: this.state.loanAmount,
+      annualIncome: this.state.annualIncome,
+      loanStatus: loanStatus,
+    });
+    currentApplication(application);
+    dispatch(addLoanApplication(application));
     this.setState({
         name: '',
         address: '',
@@ -143,4 +153,4 @@ class LoanForm extends React.Component {
     )
   }
 }
-export default LoanForm;
+export default connect()(LoanForm);
