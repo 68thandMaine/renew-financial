@@ -13,13 +13,13 @@ This challenge should take no more than 3 hours to complete.
 
 Steps:
 
-- [] Create React component to hold the form.
-- [] Create custom validation for each input.
-  - [] Name required. Type string.
-  - [] Address required. Type String
-    - [] The address field should be filled out by the [Google Maps Autocomplete API](#google-maps-places-auto=-complete).
-  - [] Annual income required. Type int.
-  - [] Loan amount required. Type int.
+- [x] Create React component to hold the form.
+- [x] Create custom validation for each input.
+  - [x] Name required. Type string.
+  - [x] Address required. Type String
+    - [x] The address field should be filled out by the [Google Maps Autocomplete API](#google-maps-places-auto=-complete).
+  - [x] Annual income required. Type int.
+  - [x] Loan amount required. Type int.
 
 ### Decisioning
 
@@ -36,7 +36,7 @@ Steps:
 
 ### Persistance
 
-- [] Integrate Redux for state management. I will not use a DB. Just Redux to hold local state information.
+- [X] Integrate Redux for state management. I will not use a DB. Just Redux to hold local state information.
 - [] Create object with the following properties:
   - Name
   - Address
@@ -71,5 +71,11 @@ ___
 | Activity | Time Spent | Total Time On Project |
 |---|---|---|
 | Planning and writing initial documentation | 15 mins | 0:15 |
-| Create Redux Components | | |
+| Create Redux Components | 35 mins | 0:45 |
+| Create Form Component | | |
  
+__
+
+## Issues
+
+- Integrating Redux I leaned heavily on old projects rather than the documentation. I know that some of the tools I created are unecsassary such as a root reducer (I only have one reducer), an index in my constants directory (I only ahve one file in the constant directory).
