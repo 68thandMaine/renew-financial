@@ -1,5 +1,5 @@
 import React from 'react';
-
+import './Results.css'
 
 function Results(props) {
 
@@ -26,10 +26,10 @@ function Results(props) {
   }
   return (
     
-      <div>
+      <div className='resultsWrapper'>
         <p>Hello {props.application.name}</p>
-        <p>Your loan was {loanStatus()}.</p>
-        {reasoning()} 
+        <p>Your loan was {loanStatus()}</p>
+        <p>{reasoning()}</p> 
         <button onClick={props.returnToApplication}>Return to application</button>
       </div>
    

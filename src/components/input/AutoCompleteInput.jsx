@@ -19,7 +19,7 @@ class AutoCompleteInput extends React.Component {
 
   async handlePlaceChanged(){
     const place = await this.address.getPlace();
-    this.props.handleSetAddressState(place.formatted_address) 
+    this.props.handleSetAddressState(place.formatted_address);
   }
 
 

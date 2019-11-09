@@ -13,28 +13,30 @@ class App extends React.Component{
     this.handleSetApplication = this.handleSetApplication.bind(this);
     this.handleReturnToApplication = this.handleReturnToApplication.bind(this);
   }
+  
+
 
   handleSetApplication(newLoan) {
-    document.querySelector('.loanFormWrapper').classList.add('hide');
-    document.querySelector('.resultsWrapper').classList.add('show');
+    document.querySelector('.loanForm').classList.add('hide');
+    document.querySelector('.results').classList.add('show');
     this.setState({
       application: newLoan
     });
   }
 
   handleReturnToApplication() {
-    document.querySelector('.loanFormWrapper').classList.remove('hide');
-    document.querySelector('.resultsWrapper').classList.remove('show');
+    document.querySelector('.loanForm').classList.remove('hide');
+    document.querySelector('.results').classList.remove('show');
   }
 
 render() {
       return (
       <div className="App">
-        <div className='loanFormWrapper'>
+        <div className='loanForm'>
           <LoanForm 
             currentApplication={this.handleSetApplication} />
         </div>
-        <div className='resultsWrapper'>
+        <div className='results'>
           <Results
             returnToApplication={this.handleReturnToApplication}
             application={this.state.application} 

@@ -5,7 +5,7 @@ import './LoanForm.css';
 import VerificationServices from '../../services/VerificationServices';
 import {connect} from 'react-redux';
 import { addLoanApplication } from '../../actions/LoanApplicationActions';
-/* global google */
+
 
 class LoanForm extends React.Component {
   constructor(props) {
@@ -23,9 +23,6 @@ class LoanForm extends React.Component {
     this.handleFormSubmission = this.handleFormSubmission.bind(this);
   }
 
-  componentWillMount() {
-    new google.maps.places.Autocomplete(document.getElementById('address'));
-  }
 
   handleInputChange(e) {
     switch (typeof e) {
