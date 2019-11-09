@@ -131,7 +131,7 @@ class LoanForm extends React.Component {
                         className='formInput'
                         onChange={this.handleInputChange} 
                         value={this.state.annualIncome}
-                        type='int'
+                        type='number'
                         required/>
                 </div>
                 <div className='inputWrapper'>
@@ -142,7 +142,7 @@ class LoanForm extends React.Component {
                         className='formInput'
                         onChange={this.handleInputChange} 
                         value={this.state.loanAmount}
-                        type='int'
+                        type='number'
                         required/>
                 </div>
                 <Button 
