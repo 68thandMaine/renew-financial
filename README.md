@@ -96,3 +96,6 @@ ___
 
 ___
 
+Issues
+
+- Hiding the google maps api key has been a bit difficult. I added the script to the index.html to enable the global google functionality, however this exposes the enviormental variable.
