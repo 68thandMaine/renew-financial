@@ -23,7 +23,6 @@ class App extends React.Component{
   }
 
   handleReturnToApplication() {
-    console.log('hi')
     document.querySelector('.loanFormWrapper').classList.remove('hide');
     document.querySelector('.resultsWrapper').classList.remove('show');
   }
