@@ -24,13 +24,18 @@ function Results(props) {
       }
     }
   }
+
+  function navigate(view) {
+    props.changeView(view);
+  }
   return (
     
       <div className='resultsWrapper'>
         <p>Hello {props.application.name}</p>
         <p>Your loan was {loanStatus()}</p>
         <p>{reasoning()}</p> 
-        <button onClick={props.returnToApplication}>Return to application</button>
+        <button onClick={()=>navigate('application')}>Return to application</button>
+        <button onClick={()=>navigate('allApplications')}>View all applications</button>
       </div>
    
   )

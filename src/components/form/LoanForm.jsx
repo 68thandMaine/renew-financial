@@ -76,7 +76,7 @@ class LoanForm extends React.Component {
   }
 
   handleFormSubmission() {
-    const { dispatch, currentApplication } = this.props;
+    const { dispatch, currentApplication, showResults } = this.props;
     if(this.validateInputs()) {
     const loanStatus = VerificationServices.loanAcceptance(this.state.annualIncome, this.state.loanAmount, this.state.address);
     const application = Object.assign({}, {
@@ -88,6 +88,7 @@ class LoanForm extends React.Component {
     });
     currentApplication(application);
     dispatch(addLoanApplication(application));
+    showResults('applicationResults');
     this.setState({
         name: '',
         address: '',

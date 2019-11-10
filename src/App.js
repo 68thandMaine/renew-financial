@@ -1,6 +1,7 @@
 import React from 'react';
 import { connect} from 'react-redux';
 import LoanForm from './components/form/LoanForm';
+import Overview from './views/Overview';
 import Results from './components/results/Results';
 import './App.css';
 
@@ -8,40 +9,38 @@ class App extends React.Component{
   constructor(props) {
     super(props);
     this.state= {
-      application: { }
+      viewOnPage: 'application',
+      application: { },
     };
     this.handleSetApplication = this.handleSetApplication.bind(this);
-    this.handleReturnToApplication = this.handleReturnToApplication.bind(this);
+    this.handleChangeView = this.handleChangeView.bind(this);
   }
   
-
-
   handleSetApplication(newLoan) {
-    document.querySelector('.loanForm').classList.add('hide');
-    document.querySelector('.results').classList.add('show');
     this.setState({
       application: newLoan
     });
   }
 
-  handleReturnToApplication() {
-    document.querySelector('.loanForm').classList.remove('hide');
-    document.querySelector('.results').classList.remove('show');
+  handleChangeView(newView) {
+    this.setState({ viewOnPage: newView });
   }
 
 render() {
+  
       return (
       <div className="App">
-        <div className='loanForm'>
-          <LoanForm 
-            currentApplication={this.handleSetApplication} />
-        </div>
-        <div className='results'>
-          <Results
-            returnToApplication={this.handleReturnToApplication}
+        {{
+          application: <LoanForm 
+            showResults = {this.handleChangeView}
+            currentApplication={this.handleSetApplication} />,
+          applicationResults: <Results
+            changeView={this.handleChangeView}
             application={this.state.application} 
-            loans={this.props.loans}/>
-        </div>
+            />,
+          allApplications : <Overview
+          loans={this.props.loans} />
+        }[this.state.viewOnPage]}
       </div>
   )}
 }
