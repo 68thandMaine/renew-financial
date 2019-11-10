@@ -1,5 +1,4 @@
 import React from 'react';
-import { connect} from 'react-redux';
 import LoanForm from './components/form/LoanForm';
 import Overview from './views/Overview';
 import Results from './components/results/Results';
@@ -38,17 +37,11 @@ render() {
             changeView={this.handleChangeView}
             application={this.state.application} 
             />,
-          allApplications : <Overview
-          loans={this.props.loans} />
+          allApplications : <Overview 
+            changeView={this.handleChangeView}/>
         }[this.state.viewOnPage]}
       </div>
   )}
 }
 
-const mapStateToProps = state => {
-  return {
-    loans: state.applications
-  }
-}
-
-export default connect(mapStateToProps)(App);
+export default App;

@@ -1,12 +1,23 @@
 import React from 'react';
+import { connect } from 'react-redux'
+import Table from '../components/table/Table';
 
-function Overview () {
+function Overview(props) {
 
   return (
     <div>
-      ...Overview component
+      <Table 
+      loans={props.loans} />
+      <NavBar 
+        changeView={props.changeView}/>
     </div>
   );
 }
 
-export default Overview;
+const mapStateToProps = state => {
+  return {
+    loans: state.applications
+  }
+}
+
+export default connect(mapStateToProps)(Overview);
