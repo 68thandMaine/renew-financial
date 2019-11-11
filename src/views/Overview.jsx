@@ -1,5 +1,6 @@
 import React from 'react';
-import { connect } from 'react-redux'
+import { connect } from 'react-redux';
+import Button from '../components/button/Button';
 import Table from '../components/table/Table';
 
 function Overview(props) {
@@ -8,8 +9,10 @@ function Overview(props) {
     <div>
       <Table 
       loans={props.loans} />
-      <NavBar 
-        changeView={props.changeView}/>
+      <Button
+      buttonType='navigationButton'
+      buttonText='Return to Application'
+      clickEvent={()=>props.changeView('application')} />
     </div>
   );
 }

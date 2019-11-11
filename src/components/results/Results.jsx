@@ -1,5 +1,6 @@
 import React from 'react';
-import './Results.css'
+import Button from '../button/Button';
+import './Results.css';
 
 function Results(props) {
 
@@ -34,7 +35,11 @@ function Results(props) {
         <p>Hello {props.application.name}</p>
         <p>Your loan was {loanStatus()}</p>
         <p>{reasoning()}</p> 
-        <button onClick={()=>navigate('application')}>Return to application</button>
+        <Button
+          clickEvent={()=>navigate('application')}
+          buttonText='ReturnToApplication' /><Button
+          clickEvent={()=>navigate('allApplications')}
+          buttonText='View All Applicants' />
         <button onClick={()=>navigate('allApplications')}>View all applications</button>
       </div>
    

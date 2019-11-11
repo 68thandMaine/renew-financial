@@ -100,8 +100,14 @@ class LoanForm extends React.Component {
 
   render() {
     return (
+      <div className='application'>
+        <div className='headerContent'>
+          <h1>Applying Is Simple</h1>
+          <p>Fill out the form below and recieve a decision in mere seconds!</p>
+        </div>
       <form className='formWrapper'>
-                <p>{this.state.validationMessage}</p>
+          <p>{this.state.validationMessage}</p>
+          <div className='personalInformation'>
                 <div className='inputWrapper'>
                     <label forhtml='name'>Name</label>
                     <input
@@ -121,6 +127,8 @@ class LoanForm extends React.Component {
                       handleSetAddressState={this.handleInputChange}/>
                     
                 </div>
+            </div>
+            <div className='financialInformation'>
                 <div className='inputWrapper'>
                     <label forhtml='annualIncome'>Annual Income</label>
                     <input
@@ -143,11 +151,13 @@ class LoanForm extends React.Component {
                         type='number'
                         required/>
                 </div>
+              </div>
                 <Button 
                   buttonType='submit'
                   buttonText='submit'
                   clickEvent={this.handleFormSubmission}/>
             </form>
+        </div>
     )
   }
 }

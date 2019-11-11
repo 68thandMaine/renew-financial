@@ -1,0 +1,18 @@
+.btn {
+  font-size: 1.5rem;
+  font-weight: 400;
+  outline: none;
+  text-decoration: none;
+  width: 30%;
+}
+.btn:hover {
+  cursor: pointer;
+}
+
+.submit {
+  background: darkgreen;
+  color: white;
+  padding: 1vw;
+  margin-top: 3vw;
+  border-radius: 16px
+}

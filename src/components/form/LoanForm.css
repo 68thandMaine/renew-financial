@@ -1,17 +1,48 @@
+.application {
+  position: fixed;
+  width: 100%;
+  height:100%;
+  padding-bottom: 5vw;
+  padding-left: 2vw;
+}
 .formWrapper {
+  background: whitesmoke;
+  padding: 1vw 4vw;
+  width: 50%;
+}
+.personalInformation {
   display: flex;
   flex-flow: column nowrap;
-  align-items: center;
+  border: solid 1px white;
+  justify-content: center;
+}
+
+
+.financialInformation {
+  border: solid 1px white;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: center;
+}
+.financialInformation .inputWrapper {
+  width: 50%
 }
 .inputWrapper {
   display: flex;
-  flex-flow: column nowrap;
-  width: 50%;
-  margin: 2vw;
+  flex-flow: column;
+  justify-content: space-between;
+  margin: 1vw;
+}
+ label {
+  text-align: left;
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-bottom: 1%;
 }
 .formInput {
-  margin-top: 2vw;
   height: 5vh;
+  font-size: 1.5rem;
+  outline: none;
 }
 .invalidEntry {
   transition: ease-in-out 150ms;

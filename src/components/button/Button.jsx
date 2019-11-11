@@ -10,7 +10,7 @@ function Button(props) {
   }
   return (
     <button
-      className={props.buttonType}
+      className={'btn ' + props.buttonType}
       onClick={(e)=>handleClick(e)}
       >{props.buttonText}</button>
   )

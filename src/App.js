@@ -8,7 +8,7 @@ class App extends React.Component{
   constructor(props) {
     super(props);
     this.state= {
-      viewOnPage: 'application',
+      viewOnPage: 'applicationResults',
       application: { },
     };
     this.handleSetApplication = this.handleSetApplication.bind(this);
