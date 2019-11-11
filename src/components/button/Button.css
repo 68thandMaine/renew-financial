@@ -16,3 +16,10 @@
   margin-top: 3vw;
   border-radius: 16px
 }
+
+.navigation {
+  background: none;
+  border: solid 3px lightskyblue;
+  border-radius: 16px;
+  margin: 2vw;
+}

@@ -1,8 +1,15 @@
 .resultsWrapper {
+  position: fixed;
   display: flex;
   flex-flow: column nowrap;
   text-align: justify;
-  align-content: center;
-  justify-content: space-around;
-  padding: 0 25% 0 25%;
+  text-align: center;
+}
+.decisionWrapper {
+  background: whitesmoke;
+  width: 100%;
+  margin: 5vw;
+}
+.decisionText {
+  padding: 4vw;
 }

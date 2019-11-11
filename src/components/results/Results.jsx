@@ -16,13 +16,9 @@ function Results(props) {
    }
   }
 
-  function reasoning() {
+  function decision() {
     if(props.application.loanStatus !== undefined) {
-      switch(props.application.loanStatus.status) {
-        case false:
         return props.application.loanStatus.info;
-        default: return null;
-      }
     }
   }
 
@@ -32,15 +28,20 @@ function Results(props) {
   return (
     
       <div className='resultsWrapper'>
-        <p>Hello {props.application.name}</p>
-        <p>Your loan was {loanStatus()}</p>
-        <p>{reasoning()}</p> 
-        <Button
-          clickEvent={()=>navigate('application')}
-          buttonText='ReturnToApplication' /><Button
-          clickEvent={()=>navigate('allApplications')}
-          buttonText='View All Applicants' />
-        <button onClick={()=>navigate('allApplications')}>View all applications</button>
+        <div className='decisionWrapper'>
+          <h2>Thank you for applying {props.application.name}</h2>
+          <p className='decisionText'>{decision()}</p>
+          <div className='navBar'>
+            <Button
+              clickEvent={()=>navigate('application')}
+              buttonText='Return To Application'
+              buttonType='navigation' />
+              <Button
+              clickEvent={()=>navigate('allApplications')}
+              buttonText='View All Applicants' 
+              buttonType='navigation'/>
+          </div>
+        </div> 
       </div>
    
   )
